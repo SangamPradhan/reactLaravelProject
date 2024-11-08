@@ -3,21 +3,13 @@ export default function Home({ posts }) {
 
     return (
         <>
-            <h1 className="title">Hello World</h1>
+            <h1 className="title">Helloo !?</h1>
             <div>
-                {Array.isArray(posts) && posts.length > 0 ? (
-                    posts.map(post => (
-                        <div key={post.id} className="padding-4 border-b">
-                            <div className="text-sm text-slate-600">
-                                <span>Posted on:</span>
-                                <span>{new Date(post.created_at).toLocaleTimeString()}</span>
-                            </div>
-                            <p>{post.body}</p>
-                        </div>
-                    ))
-                ) : (
-                    <p>No posts available</p>
-                )}
+                {posts.map(post => (
+                    <div key={post.id}>
+                        <p>{post.body}</p>
+                    </div>
+                ))}
             </div>
         </>
     );
